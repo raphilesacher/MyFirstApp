@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">NetworkTest_11903738</string>
+    <string name="gib_deine_matrikelnummer_ein">Gib deine Matrikelnummer ein</string>
+    <string name="hint">hint</string>
 </resources>
