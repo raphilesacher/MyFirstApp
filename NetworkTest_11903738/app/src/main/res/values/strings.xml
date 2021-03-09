@@ -3,4 +3,5 @@
     <string name="gib_deine_matrikelnummer_ein">Gib deine Matrikelnummer ein</string>
     <string name="hint">hint</string>
     <string name="anntwort_vom_server">Anntwort vom Server</string>
+    <string name="abschicken">Abschicken</string>
 </resources>
