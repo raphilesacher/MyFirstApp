@@ -6,7 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.*;
 
-import com.google.android.material.textfield.TextInputLayout;
+import com.google.android.material.textfield.TextInputEditText;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,13 +18,15 @@ public class MainActivity extends AppCompatActivity {
 
         Button button = findViewById(R.id.button);
         TextView serverResponse = findViewById(R.id.serverResponse);
-        TextInputLayout matrInput = findViewById(R.id.matrInput);
-        //set Buttonlistener to connect to server on click
+        TextInputEditText matrInput = findViewById(R.id.matrInput);
+        //set OnClickListener to button for button action
         button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
-                //Click handler Action
+                //just a test
+                serverResponse.setText("Test OK");
             }
         });
+
 
 
     }
