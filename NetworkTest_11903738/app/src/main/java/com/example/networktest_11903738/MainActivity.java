@@ -3,6 +3,7 @@ package com.example.networktest_11903738;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.*;
 
 import com.google.android.material.textfield.TextInputLayout;
@@ -17,7 +18,12 @@ public class MainActivity extends AppCompatActivity {
         Button button = findViewById(R.id.button);
         TextView serverResponse = findViewById(R.id.serverResponse);
         TextInputLayout matrInput = findViewById(R.id.matrInput);
-        
+        //set Buttonlistener to connect to server on click
+        button.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v) {
+                //Click handler Action
+            }
+        });
 
 
     }
