@@ -3,7 +3,7 @@ package com.example.networktest_11903738;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.widget.Button;
+import android.widget.*;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button button = findViewById(R.id.button);
+        TextView serverResponse = findViewById(R.id.serverResponse);
 
 
     }
