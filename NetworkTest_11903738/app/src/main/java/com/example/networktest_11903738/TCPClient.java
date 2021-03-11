@@ -21,7 +21,7 @@ public class TCPClient {
         clientSocket.close();
     }
 
-    private static String returnServerMessage() {
+    public static String returnServerMessage() {
         return fromServer;
     }
 }

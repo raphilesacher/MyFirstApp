@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //just a test
                 TCPClient client = new TCPClient();
-                //serverResponse.setText("Test OK");
+                serverResponse.setText(client.returnServerMessage());
             }
         });
 
