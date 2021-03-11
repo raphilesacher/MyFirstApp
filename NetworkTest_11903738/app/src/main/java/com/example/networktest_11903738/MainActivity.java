@@ -31,6 +31,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //just a test
                 SendMatrNr send = new SendMatrNr(matrInput.getText().toString());
+                Thread thread = new Thread(send);
+                thread.start();
+
+                try {
+                    thread.join();
+                }catch (InterruptedException e) {
+                    System.out.println(e.getMessage());
+                }
 
 
                 serverResponse.setText(TCPClient.returnServerMessage());
