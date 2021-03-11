@@ -23,8 +23,7 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
                 //just a test
-                TCPClient client = new TCPClient();
-                serverResponse.setText(client.returnServerMessage());
+                serverResponse.setText(TCPClient.returnServerMessage());
             }
         });
 
