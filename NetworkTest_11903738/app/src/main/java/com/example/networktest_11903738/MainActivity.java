@@ -8,6 +8,11 @@ import android.widget.*;
 
 import com.google.android.material.textfield.TextInputEditText;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.util.Objects;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,11 +24,17 @@ public class MainActivity extends AppCompatActivity {
         Button button = findViewById(R.id.button);
         TextView serverResponse = findViewById(R.id.serverResponse);
         TextInputEditText matrInput = findViewById(R.id.matrInput);
+
+
         //set OnClickListener to button for button action
         button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
                 //just a test
+                SendMatrNr send = new SendMatrNr(matrInput.getText().toString());
+
+
                 serverResponse.setText(TCPClient.returnServerMessage());
+
             }
         });
 
