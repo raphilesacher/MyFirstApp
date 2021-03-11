@@ -4,8 +4,8 @@ import java.net.*;
 
 public class TCPClient {
     private static String fromServer;
-
     public static void main(String[] args) throws Exception{
+
         String toServer;
 
 
@@ -17,7 +17,7 @@ public class TCPClient {
         toServer = userInput.readLine();
         outToServer.writeBytes(toServer);
         fromServer = serverResponse.readLine();
-
+        System.out.println(fromServer);
         clientSocket.close();
     }
 
