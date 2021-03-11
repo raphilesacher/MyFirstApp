@@ -14,9 +14,10 @@ public class SendMatrNr implements Runnable{
         PrintWriter serverWriter;
         try {
             serverWriter = new PrintWriter(matrNr);
+            serverWriter.println(matrNr);
             serverWriter.flush();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            e.getMessage();
         }
     }
 }

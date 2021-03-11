@@ -10,14 +10,17 @@ public class TCPServer {
         ServerSocket welcomeSocket = new ServerSocket(53212);
         while(true) {
             Socket connectionSocket = welcomeSocket.accept();
+            try {
+               BufferedReader inFromClient = new BufferedReader(new InputStreamReader(connectionSocket.getInputStream()));
+               DataOutputStream outToClient = new DataOutputStream(connectionSocket.getOutputStream());
 
-            BufferedReader inFromClient = new BufferedReader(new InputStreamReader(connectionSocket.getInputStream()));
-            DataOutputStream outToClient = new DataOutputStream(connectionSocket.getOutputStream());
+               clientSentence = inFromClient.readLine();
+               capitalizedSentence = clientSentence.toUpperCase() + '\n';
 
-            clientSentence = inFromClient.readLine();
-            capitalizedSentence = clientSentence.toUpperCase() +'\n';
-
-            outToClient.writeBytes(capitalizedSentence);
+               outToClient.writeBytes(capitalizedSentence);
+           }catch (Exception e) {
+               System.out.println(e.getMessage());
+           }
         }
     }
 }
