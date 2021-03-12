@@ -16,15 +16,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button button = findViewById(R.id.button);
+        Button sendToServerBtn = findViewById(R.id.button);
         TextView serverResponse = findViewById(R.id.serverResponse);
         TextInputEditText matrInput = findViewById(R.id.matrInput);
 
+        Button calculateBtn = findViewById(R.id.button2);
 
-        //set OnClickListener to button for button action
-        button.setOnClickListener(new View.OnClickListener(){
+
+
+        //set OnClickListener to sendToServerBtn for button action
+        sendToServerBtn.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
-                //just a test
+
                 SendMatrNr send = new SendMatrNr(matrInput.getText().toString());
                 Thread thread = new Thread(send);
                 thread.start();
@@ -35,8 +38,13 @@ public class MainActivity extends AppCompatActivity {
                     System.out.println(e.getMessage());
                 }
 
-
                 serverResponse.setText(send.returnServerMessage());
+            }
+        });
+
+        //set OnClickListener to sendToServerBtn for button action
+        calculateBtn.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v) {
 
 
 
