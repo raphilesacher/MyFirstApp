@@ -65,7 +65,9 @@ public class MatrSort {
     }
 
     private void printList(ArrayList<Integer> sorted) {
-
+        for (Integer integer : sorted) {
+            System.out.print(integer);
+        }
     }
 
 
