@@ -1,10 +1,14 @@
+/**
+ * Name: Raphael Lesacher
+ * Matrikelnummer: 11903738
+ */
 package com.example.networktest_11903738;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
-import java.io.FileNotFoundException;
+
 import java.io.*;
-import java.io.PrintWriter;
+
 import java.net.*;
 
 public class SendMatrNr implements Runnable{

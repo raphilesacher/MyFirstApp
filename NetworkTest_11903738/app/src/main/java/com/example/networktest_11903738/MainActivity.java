@@ -1,3 +1,7 @@
+/**
+ * Name: Raphael Lesacher
+ * Matrikelnummer: 11903738
+ */
 package com.example.networktest_11903738;
 
 import androidx.appcompat.app.AppCompatActivity;
