@@ -8,10 +8,16 @@ import android.widget.*;
 
 import com.google.android.material.textfield.TextInputEditText;
 
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.net.Socket;
 import java.util.Objects;
+import java.net.*;
+import java.io.*;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -41,7 +47,8 @@ public class MainActivity extends AppCompatActivity {
                 }
 
 
-                serverResponse.setText(TCPClient.returnServerMessage());
+                //serverResponse.setText(TCPClient.returnServerMessage());
+
 
             }
         });
