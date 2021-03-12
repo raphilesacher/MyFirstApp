@@ -9,6 +9,7 @@ import java.net.*;
 
 public class SendMatrNr implements Runnable{
     String matrNr;
+    String fromServer;
     public SendMatrNr(String matrNr) {
         this.matrNr = matrNr;
     }
@@ -17,7 +18,7 @@ public class SendMatrNr implements Runnable{
     public void run() {
 
         String toServer;
-        String fromServer;
+
 
         BufferedReader userInput = new BufferedReader(new InputStreamReader(System.in));
         System.out.println(userInput);
@@ -26,7 +27,7 @@ public class SendMatrNr implements Runnable{
             Socket clientSocket = new Socket("se2-isys.aau.at", 53212);
             DataOutputStream outToServer = new DataOutputStream(clientSocket.getOutputStream());
             BufferedReader serverResponse = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-            System.out.println("OUT TO SERVER: " + outToServer.toString());
+
             toServer = userInput.readLine();
             outToServer.writeBytes(toServer + '\n');
             fromServer = serverResponse.readLine();
@@ -36,5 +37,8 @@ public class SendMatrNr implements Runnable{
             e.printStackTrace();
         }
 
+    }
+    public String returnServerMessage() {
+        return fromServer;
     }
 }

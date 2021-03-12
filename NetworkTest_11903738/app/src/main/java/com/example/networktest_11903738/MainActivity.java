@@ -36,7 +36,8 @@ public class MainActivity extends AppCompatActivity {
                 }
 
 
-                //serverResponse.setText(TCPClient.returnServerMessage());
+                serverResponse.setText(send.returnServerMessage());
+
 
 
             }
