@@ -18,10 +18,10 @@ public class MatrSort {
         }
 
         ArrayList<Integer> sorted = splitList(matrList);
-        printList(sorted);
+
     }
 
-    private ArrayList<Integer> splitList(ArrayList<Integer> toSort) {
+    public ArrayList<Integer> splitList(ArrayList<Integer> toSort) {
         //list for even numbers
         ArrayList<Integer> evenNums = new ArrayList<>();
         //list for odd numbers
@@ -64,10 +64,12 @@ public class MatrSort {
         return mergedList;
     }
 
-    private void printList(ArrayList<Integer> sorted) {
+    public String toString(ArrayList<Integer> sorted) {
+        StringBuilder builder = new StringBuilder();
         for (Integer integer : sorted) {
-            System.out.print(integer);
+            builder.append(integer);
         }
+        return builder.toString();
     }
 
 
