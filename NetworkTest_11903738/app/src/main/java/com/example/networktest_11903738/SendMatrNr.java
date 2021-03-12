@@ -17,19 +17,12 @@ public class SendMatrNr implements Runnable{
     @Override
     public void run() {
 
-        String toServer;
-
-
-        BufferedReader userInput = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println(userInput);
-        System.out.println(matrNr);
         try {
             Socket clientSocket = new Socket("se2-isys.aau.at", 53212);
             DataOutputStream outToServer = new DataOutputStream(clientSocket.getOutputStream());
             BufferedReader serverResponse = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
 
-            toServer = userInput.readLine();
-            outToServer.writeBytes(toServer + '\n');
+            outToServer.writeBytes(matrNr + '\n');
             fromServer = serverResponse.readLine();
             System.out.println(fromServer);
             clientSocket.close();
