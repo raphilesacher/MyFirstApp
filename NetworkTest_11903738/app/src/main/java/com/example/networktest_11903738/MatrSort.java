@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class MatrSort {
     long matrNr;
+    String text;
 
     public MatrSort(Long matrNr) {
         this.matrNr = matrNr;
@@ -18,6 +19,7 @@ public class MatrSort {
         }
 
         ArrayList<Integer> sorted = splitList(matrList);
+        setText(sorted);
 
     }
 
@@ -64,12 +66,18 @@ public class MatrSort {
         return mergedList;
     }
 
-    public String toString(ArrayList<Integer> sorted) {
+    public void setText(ArrayList<Integer> sorted) {
+
         StringBuilder builder = new StringBuilder();
-        for (Integer integer : sorted) {
-            builder.append(integer);
+        for(int i = 0; i < sorted.size(); i++) {
+            builder.append(sorted.get(i));
         }
-        return builder.toString();
+        text = builder.toString();
+
+    }
+    //returns the String to set it as a the new Value of the input field
+    public String getText() {
+        return text;
     }
 
 
