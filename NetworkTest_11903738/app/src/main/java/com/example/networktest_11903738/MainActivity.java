@@ -45,9 +45,10 @@ public class MainActivity extends AppCompatActivity {
         //set OnClickListener to sendToServerBtn for button action
         calculateBtn.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
-                MatrSort sorter = new MatrSort(123456789L);
+                MatrSort sorter = new MatrSort(Long.parseLong(matrInput.getText().toString()));
                 sorter.init();
-                matrInput.setText(sorter.toString());
+                matrInput.setText(sorter.getText());
+
             }
         });
 
