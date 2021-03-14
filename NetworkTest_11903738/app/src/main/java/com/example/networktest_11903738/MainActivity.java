@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         Button sendToServerBtn = findViewById(R.id.button);
         TextView serverResponse = findViewById(R.id.serverResponse);
         TextInputEditText matrInput = findViewById(R.id.matrInput);
+        TextView error = findViewById(R.id.errorText);
 
         Button calculateBtn = findViewById(R.id.button2);
 
@@ -49,9 +50,17 @@ public class MainActivity extends AppCompatActivity {
         //set OnClickListener to sendToServerBtn for button action
         calculateBtn.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
+                //if Matrikelnummer not valid
+                if(matrInput.getText().toString().length() != 8) {
+                    error.setText("Bitte eine gültige Matrikelnummer eingeben!");
+                    return;
+                }
+                //if valid
+                error.setText("");
                 MatrSort sorter = new MatrSort(Long.parseLong(matrInput.getText().toString()));
                 sorter.init();
                 matrInput.setText(sorter.getText());
+
 
             }
         });
